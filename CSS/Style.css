@@ -340,11 +340,13 @@ article
     .img-float-left
     {
         width: 100%;
+        /*max-width:300px;*/
     }
 
     .img-float-right
     {
         width: 100%;
+        /*max-width:300px;*/
     }
 
     #content-zone
@@ -366,4 +368,6 @@ article
     {
         width: 100%;
     }
+
+
 }
