@@ -276,11 +276,20 @@ article
     .header-gradylogo-circle
     {
         left: -134px;
+        -moz-transition: none;
+        -o-transition: none;
+        -webkit-transition: none;
+        transition: none;
     }
 
     .header-gradylogo-ribbon
     {
         /*display: none;*/
+        left: -54px;
+        -moz-transition: none;
+        -o-transition: none;
+        -webkit-transition: none;
+        transition: none;
     }
 }
 
@@ -301,7 +310,7 @@ article
     .container
     {
         width: 98%;
-        min-width:280px;
+        min-width: 280px;
     }
 
     .header-gradylogo
@@ -325,36 +334,36 @@ article
         height: 130px;
         width: 200px;
         margin: 10px auto;
-        display:block;
+        display: block;
     }
 
     .img-float-left
     {
-        width:100%;
+        width: 100%;
     }
 
     .img-float-right
     {
-        width:100%;
+        width: 100%;
     }
 
     #content-zone
     {
-        margin:10px 9px;
+        margin: 10px 9px;
     }
 
-    .navigation > ul 
+    .navigation > ul
     {
-        margin-top:0px;
+        margin-top: 0px;
     }
 
     .facilities-column-left
     {
-        width:100%;
+        width: 100%;
     }
 
     .facilities-column-right
     {
-        width:100%;
+        width: 100%;
     }
 }
