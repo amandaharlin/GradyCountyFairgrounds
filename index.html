@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<link href="CSS/0_reset.css" rel="stylesheet" />
+<link href="CSS/Style.css" rel="stylesheet" />
+<link href="content/themes/base/minified/jquery-ui.min.css" rel="stylesheet" />
+<script src="Scripts/jquery-1.9.1.min.js"></script>
+<script src="Scripts/jquery-ui-1.10.1.min.js"></script>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Grady County</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <div class="header-voidsquare">
+                    &nbsp;
+                </div>
+                <div class="header-text-frame">
+                    <a class="header-text-link" href="index.html">
+                        <img class="header-text-logo" src="Images/GradyHeader.png" />
+                    </a>
+                </div>
+
+                <div class="header-pedament">
+                    &nbsp;
+                </div>
+                <div class="header-gradylogo">
+                    <img class=" header-gradylogo-circle" src="Images/GradyLogo-circle.png" />
+                    <img class=" header-gradylogo-ribbon" src="Images/GradyLogo_ribbon.png" />
+
+                </div>
+
+            </div>
+            <div class="content">
+                <div class="navigation">
+                    <ul>
+                        <li>
+                            <a id="current" href="home.html">
+                                <span>Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="facilities.html">
+                                <span>Facilities</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="calendar.html">
+                                <span>Calendar</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="livestock.html">
+                                <span>Livestock</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="contact.html">
+                                <span>Contact Us</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="content-article">
+                    <div id="content-zone">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </body>
+    <script>
+
+        $(document).ready(function () {
+
+            var $headerGradylogoCircle = $('.header-gradylogo-circle');
+            var $headerGradylogoRibbon = $('.header-gradylogo-ribbon');
+            var $headerTextlogo = $('.header-text-logo');
+            var $contentZone = $('#content-zone');
+
+            var $navigation = $('.navigation');
+
+            $headerGradylogoRibbon.css({
+
+                'top': '0px'
+            })
+
+            $.get('content/home.html', null, null, 'html').done(function (response, message, xhr) {
+                $contentZone.html(response)
+            });
+
+            var loadContentZone = function (e) {
+                e.stopPropagation();
+                e.preventDefault();
+                var zonetoLoad = $(this).attr('href');
+
+                $.get('content/' + zonetoLoad, null, null, 'html')
+                .done(function (response, message, xhr) {
+                    $contentZone.html(response).hide().show('fade');
+                });
+            };
+
+            $navigation.find('a').on('click', loadContentZone);
+
+            //$headerGradylogoCircle.css({
+            //    'transform': 'rotate(-360deg) scale(1)'
+            //})
+
+            //$headerTextlogo.on('mouseenter', function () {
+            //    $headerGradylogoCircle.css({
+
+            //            'transform': 'rotate(360deg) scale(0.8)'
+            //        })
+
+            //    })
+            //    .on('mouseleave', function () {
+
+            //        $headerGradylogoCircle.css({
+
+            //            'transform': 'rotate(0deg) scale(1.0)'
+            //        })
+            //    });
+        });
+
+
+
+    </script>
+</html>
