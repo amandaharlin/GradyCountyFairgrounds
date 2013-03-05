@@ -88,41 +88,41 @@
             $.get('content/home.html', null, null, 'html').done(function (response, message, xhr) {
                 $contentZone.html(response)
             });
-        
+
             var loadContentZone = function (e) {
                 e.stopPropagation();
                 e.preventDefault();
                 var zonetoLoad = $(this).attr('href');
-        
+
                 $.get('content/' + zonetoLoad, null, null, 'html')
                 .done(function (response, message, xhr) {
                     $contentZone.html(response).hide().show('fade');
                 });
             };
-        
+
             $navigation.find('a').on('click', loadContentZone);
 
             //$headerGradylogoCircle.css({
             //    'transform': 'rotate(-360deg) scale(1)'
             //})
-        
+
             //$headerTextlogo.on('mouseenter', function () {
             //    $headerGradylogoCircle.css({
 
             //            'transform': 'rotate(360deg) scale(0.8)'
             //        })
-        
+
             //    })
             //    .on('mouseleave', function () {
-        
+
             //        $headerGradylogoCircle.css({
-        
+
             //            'transform': 'rotate(0deg) scale(1.0)'
             //        })
             //    });
         });
-        
-        
-        
+
+
+
     </script>
 </html>
