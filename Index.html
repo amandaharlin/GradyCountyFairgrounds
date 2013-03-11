@@ -1,6 +1,9 @@
 ﻿<!DOCTYPE html>
 <link href="CSS/0_reset.css" rel="stylesheet" />
 <link href="CSS/Style.css" rel="stylesheet" />
+<!--[if IE 7]>
+	<link rel="stylesheet" type="text/css" href="CSS/IE7Style.css">
+<![endif]-->
 <link href="content/themes/base/minified/jquery-ui.min.css" rel="stylesheet" />
 <script src="Scripts/jquery-1.9.1.min.js"></script>
 <script src="Scripts/jquery-ui-1.10.1.min.js"></script>
@@ -16,7 +19,7 @@
                     &nbsp;
                 </div>
                 <div class="header-text-frame">
-                    <a class="header-text-link" href="Index.html">
+                    <a class="header-text-link" href="index.html">
                         <img class="header-text-logo" src="Images/GradyHeader.png" />
                     </a>
                 </div>
@@ -35,27 +38,69 @@
                 <div class="navigation">
                     <ul>
                         <li>
-                            <a id="current" href="home.html">
+                            <a id="current" href="Home.html">
                                 <span>Home</span>
                             </a>
                         </li>
                         <li>
-                            <a href="facilities.html">
+                            <a href="Facilities.html">
                                 <span>Facilities</span>
                             </a>
+                            <ul>
+                                <li>
+                                    <a href="Building1.html">
+                                    <span>Building 1</span>
+                                        </a>
+                                </li>
+                                <li>
+                                    <a href="Building_2.html">
+                                    <span>Building 2</span>
+                                        </a>
+                                </li>
+                                <li>
+                                    <a href="Building3.html">
+                                    <span>Building 3</span>
+                                        </a>
+                                </li>
+                                <li>
+                                    <a href="Building4.html">
+                                    <span>Building 4</span>
+                                        </a>
+                                </li>
+                                <li>
+                                    <a href="Building5.html">
+                                    <span>Building 5</span>
+                                        </a>
+                                </li>
+                                <li>
+                                    <a href="OutdoorArena.html">
+                                    <span>Outdoor Arena</span>
+                                        </a>
+                                </li>
+                            </ul>
                         </li>
                         <li>
-                            <a href="calendar.html">
+                            <a href="Calendar.html">
                                 <span>Calendar</span>
                             </a>
                         </li>
+
+                        <!--Hey there, web developer! 
+                            Comment out the list item
+                            that says "Livestock" when
+                            the Fairgrounds doesn't need it.
+                            This way, you don't have to delete
+                            the Livestock.html file.-->
                         <li>
-                            <a href="livestock.html">
+                            <a href="Livestock.html">
                                 <span>Livestock</span>
                             </a>
                         </li>
+                        <!--This ends the <li>'s section 
+                            where you'd comment it out.-->
+
                         <li>
-                            <a href="contact.html">
+                            <a href="ContactUs.html">
                                 <span>Contact Us</span>
                             </a>
                         </li>
@@ -88,41 +133,41 @@
             $.get('content/home.html', null, null, 'html').done(function (response, message, xhr) {
                 $contentZone.html(response)
             });
-        
+
             var loadContentZone = function (e) {
                 e.stopPropagation();
                 e.preventDefault();
                 var zonetoLoad = $(this).attr('href');
-        
+
                 $.get('content/' + zonetoLoad, null, null, 'html')
                 .done(function (response, message, xhr) {
                     $contentZone.html(response).hide().show('fade');
                 });
             };
-        
+
             $navigation.find('a').on('click', loadContentZone);
 
             //$headerGradylogoCircle.css({
             //    'transform': 'rotate(-360deg) scale(1)'
             //})
-        
+
             //$headerTextlogo.on('mouseenter', function () {
             //    $headerGradylogoCircle.css({
 
             //            'transform': 'rotate(360deg) scale(0.8)'
             //        })
-        
+
             //    })
             //    .on('mouseleave', function () {
-        
+
             //        $headerGradylogoCircle.css({
-        
+
             //            'transform': 'rotate(0deg) scale(1.0)'
             //        })
             //    });
         });
-        
-        
-        
+
+
+
     </script>
 </html>
